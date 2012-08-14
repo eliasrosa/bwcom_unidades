@@ -5,7 +5,7 @@ $tituloPage = "Administração de Unidades";
 
 $menu = array(
     '0' => array(
-        'url' => 'adm.php?com=unidades&view=lista',
+        'url' => '/unidades/lista',
         'tit' => 'Listar'
     )
 );

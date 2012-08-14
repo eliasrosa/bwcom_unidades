@@ -2,11 +2,11 @@
 defined('BW') or die("Acesso negado!");
 
 echo bwAdm::createHtmlSubMenu(0);
-echo bwButton::redirect('Criar nova unidade', 'adm.php?com=unidades&view=cadastro');
+echo bwButton::redirect('Criar nova unidade', '/unidades/cadastro/0');
 
 function grid_col0($i)
 {
-    return $i->id;
+    return '<a href="' . $i->getUrl('/unidades/cadastro') . '">'.$i->id.'</a>';
 }
 
 function grid_col1($i)
@@ -17,7 +17,7 @@ function grid_col1($i)
 
 function grid_col2($i)
 {
-    return '<a href="' . bwRouter::_('adm.php?com=unidades&view=cadastro&id=' . $i->id) . '">'.$i->cidade.'</a>';
+    return $i->cidade;
 }
 
 function grid_col3($i)

@@ -1,22 +1,8 @@
 <?
+
 defined('BW') or die("Acesso negado!");
 
-function unidadesBuildRoute( &$query )
-{
-    $segments = array();    
-    return $segments;
-}
-
-function unidadesParseRoute( $segments )
-{
-    $vars = array();
-    
-    if(count($segments))
-    {
-        $vars['id'] = $segments[0];     
-        $vars['alias'] = $segments[1];      
-    }
-    
-    return $vars;   
-}
-?>
+bwRouter::addUrl('/unidades');
+bwRouter::addUrl('/unidades/task', array('type' => 'task'));
+bwRouter::addUrl('/unidades/lista');
+bwRouter::addUrl('/unidades/cadastro/:id', array('fields' => array('id')));
