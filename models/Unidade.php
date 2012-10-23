@@ -65,8 +65,7 @@ class Unidade extends bwRecord
     public function setUp()
     {
         parent::setUp();
-
-        $this->setBwImagem('unidades', 'imagens');
+        $this->addImagem();
     }
 
     public function salvar($dados)

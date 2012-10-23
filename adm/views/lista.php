@@ -1,4 +1,5 @@
 <?
+
 defined('BW') or die("Acesso negado!");
 
 echo bwAdm::createHtmlSubMenu(0);
@@ -6,12 +7,12 @@ echo bwButton::redirect('Criar nova unidade', '/unidades/cadastro/0');
 
 function grid_col0($i)
 {
-    return '<a href="' . $i->getUrl('/unidades/cadastro') . '">'.$i->id.'</a>';
+    return '<a href="' . $i->getUrl('/unidades/cadastro') . '">' . $i->id . '</a>';
 }
 
 function grid_col1($i)
 {
-    $src = $i->bwImagem->getUrlResize('width=100&height=100');
+    $src = $i->bwImagem->default->resize(100, 100);
     return sprintf('<img src="%s" />', $src);
 }
 
